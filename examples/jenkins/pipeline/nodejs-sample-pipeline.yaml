@@ -1,7 +1,9 @@
 kind: "BuildConfig"
 apiVersion: "v1"
-metadata:
-  name: "nodejs-sample-pipeline"
+ metadata:
+    annotations:
+      pipeline.alpha.openshift.io/uses: '[{"name": "${NAME}", "namespace": "", "kind": "DeploymentConfig"}]'
+    creationTimestamp: null
 spec:
   strategy:
     jenkinsPipelineStrategy:
